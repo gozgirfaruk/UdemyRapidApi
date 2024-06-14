@@ -16,7 +16,6 @@ namespace HotelProject.EntityLayer.Concrete
         public int BedCount { get; set; }
         public int BathCount { get; set; }
         public string Description { get; set; }
-        public int MyProperty { get; set; }
         public bool Wifi { get; set; }
 
 

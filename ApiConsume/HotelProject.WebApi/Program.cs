@@ -3,6 +3,7 @@ using HotelProject.Business.Concrete;
 using HotelProject.DataAccess.Abstract;
 using HotelProject.DataAccess.Concrete;
 using HotelProject.DataAccess.EntityFramework;
+using HotelProject.WebApi.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,16 @@ builder.Services.AddScoped<IRoomService,RoomMenager>();
 builder.Services.AddScoped<ISubscribeDal,EfSubscribeDal>();
 builder.Services.AddScoped<ISubscribeService,SubscribeMenager>();
 
+builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("HotelierApi", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -39,6 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("HotelierApi");
 
 app.UseAuthorization();
 
