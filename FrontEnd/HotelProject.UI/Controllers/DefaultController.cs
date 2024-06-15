@@ -2,7 +2,7 @@
 
 namespace HotelProject.UI.Controllers
 {
-    public class AdminLayout : Controller
+    public class DefaultController : Controller
     {
         public IActionResult Index()
         {
