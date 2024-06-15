@@ -4,6 +4,7 @@ using HotelProject.DataAccess.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelProject.DataAccess.Migrations
 {
     [DbContext(typeof(ApiContext))]
-    partial class ApiContextModelSnapshot : ModelSnapshot
+    [Migration("20240615122310_About_tableCreated")]
+    partial class About_tableCreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -159,23 +161,6 @@ namespace HotelProject.DataAccess.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Newsletter", b =>
-                {
-                    b.Property<int>("NewsletterID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NewsletterID"), 1L, 1);
-
-                    b.Property<string>("Mail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("NewsletterID");
-
-                    b.ToTable("Newsletters");
                 });
 
             modelBuilder.Entity("HotelProject.EntityLayer.Concrete.Room", b =>

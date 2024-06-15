@@ -19,6 +19,8 @@ builder.Services.AddScoped<IServiceDal,EfServiceDal>();
 builder.Services.AddScoped<ITestimonialDal,EfTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService,TestimonialMenager>();
 
+builder.Services.AddScoped<IAboutDal,EfAboutDal>();
+builder.Services.AddScoped<IAboutService,AboutMenager>();
 
 builder.Services.AddScoped<IRoomDal,EfRoomDal>();
 builder.Services.AddScoped<IRoomService,RoomMenager>();

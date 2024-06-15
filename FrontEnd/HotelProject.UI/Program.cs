@@ -1,4 +1,8 @@
+using HotelProject.Business.Abstract;
+using HotelProject.Business.Concrete;
+using HotelProject.DataAccess.Abstract;
 using HotelProject.DataAccess.Concrete;
+using HotelProject.DataAccess.EntityFramework;
 using HotelProject.EntityLayer.Concrete;
 using HotelProject.UI.Mapping;
 

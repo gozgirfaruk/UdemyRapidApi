@@ -20,6 +20,7 @@ namespace HotelProject.DataAccess.Concrete
         public DbSet<Staff> Staffies { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<AboutUs> AboutUses { get; set; }
 
     }
 }
