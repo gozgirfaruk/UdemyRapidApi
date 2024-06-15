@@ -1,5 +1,6 @@
 ﻿using HotelProject.Business.Abstract;
 using HotelProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

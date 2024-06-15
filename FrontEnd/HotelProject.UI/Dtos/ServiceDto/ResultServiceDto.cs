@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HotelProject.EntityLayer.Concrete
+﻿namespace HotelProject.UI.Dtos.ServiceDto
 {
-    public class Service
+    public class ResultServiceDto
     {
         public int ServiceID { get; set; }
         public string ServiceIcon { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-
-
     }
 }
