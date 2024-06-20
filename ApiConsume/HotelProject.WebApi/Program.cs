@@ -25,6 +25,9 @@ builder.Services.AddScoped<IAboutService,AboutMenager>();
 builder.Services.AddScoped<IRoomDal,EfRoomDal>();
 builder.Services.AddScoped<IRoomService,RoomMenager>();
 
+builder.Services.AddScoped<IBookingDal,EfBookingDal>();
+builder.Services.AddScoped<IBookingService,BookingMenager>();
+
 builder.Services.AddScoped<ISubscribeDal,EfSubscribeDal>();
 builder.Services.AddScoped<ISubscribeService,SubscribeMenager>();
 

@@ -17,6 +17,9 @@ builder.Services.AddDbContext<ApiContext>();
 builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<ApiContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IBookingDal, EfBookingDal>();
+builder.Services.AddScoped<IBookingService,BookingMenager>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
