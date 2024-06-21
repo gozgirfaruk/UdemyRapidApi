@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProject.UI", "FrontEnd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProject.Business", "ApiConsume\HotelProject.Business\HotelProject.Business.csproj", "{E63EC3BF-3D05-4D1C-8B95-570052B98A4B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JwtProject", "JwtProject", "{C0F0F87F-916D-4276-981C-D350005D8058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiJWT", "JwtProject\WebApiJWT\WebApiJWT.csproj", "{7BEAB8D8-5B6E-403D-A9F8-AF655891A9C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{E63EC3BF-3D05-4D1C-8B95-570052B98A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E63EC3BF-3D05-4D1C-8B95-570052B98A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E63EC3BF-3D05-4D1C-8B95-570052B98A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BEAB8D8-5B6E-403D-A9F8-AF655891A9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BEAB8D8-5B6E-403D-A9F8-AF655891A9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BEAB8D8-5B6E-403D-A9F8-AF655891A9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BEAB8D8-5B6E-403D-A9F8-AF655891A9C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{340EF561-3262-45B0-94B4-387C8F5B397B} = {834666CC-0C82-4E61-AFC7-280C1856F800}
 		{E2A7AAF7-4C26-47E3-8174-76CB1ED60E02} = {283807CC-EA97-410A-A7D5-641D4E598F03}
 		{E63EC3BF-3D05-4D1C-8B95-570052B98A4B} = {834666CC-0C82-4E61-AFC7-280C1856F800}
+		{7BEAB8D8-5B6E-403D-A9F8-AF655891A9C7} = {C0F0F87F-916D-4276-981C-D350005D8058}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {049FB467-16B1-4D8D-B428-623EAFFFED9A}
