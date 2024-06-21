@@ -18,6 +18,16 @@ namespace HotelProject.Business.Concrete
             _bookingDal = bookingDal;
         }
 
+        public void TApproveStatus(int id)
+        {
+            _bookingDal.ApproveStatus(id);
+        }
+
+        public void TCancelStatus(int id)
+        {
+            _bookingDal.CancelStatus(id);
+        }
+
         public void TDelete(Booking entity)
         {
             _bookingDal.Delete(entity);

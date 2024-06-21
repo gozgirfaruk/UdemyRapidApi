@@ -49,5 +49,20 @@ namespace HotelProject.WebApi.Controllers
             return Ok(value);
         }
 
+        [HttpPut("ApproveStatus")]
+        public IActionResult ApproveStatus(int id)
+        {
+            _bookingService.TApproveStatus(id);
+            return Ok();
+        }
+
+
+        [HttpPut("CancelStatus")]
+        public IActionResult CancelStatus(int id)
+        {
+            _bookingService.TApproveStatus(id);
+            return Ok();
+        }
+
     }
 }

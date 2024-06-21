@@ -29,6 +29,8 @@ namespace HotelProject.UI.Mapping
             CreateMap<LoginUserDto , AppUser>().ReverseMap();
 
             CreateMap<CreateBookingDto ,Booking>().ReverseMap();
+            CreateMap<ResultBookingDto ,Booking>().ReverseMap();
+            CreateMap<ApproveStatusDto , Booking>().ReverseMap();
         }
     }
 }

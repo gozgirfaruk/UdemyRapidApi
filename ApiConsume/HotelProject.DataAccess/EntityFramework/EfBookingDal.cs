@@ -15,5 +15,21 @@ namespace HotelProject.DataAccess.EntityFramework
         public EfBookingDal(ApiContext context) : base(context)
         {
         }
+
+        public void ApproveStatus(int id)
+        {
+            using ApiContext context = new ApiContext();
+            var values = context.Bookings.Where(x => x.BookingID == id).FirstOrDefault();
+            values.Status = true;
+            context.SaveChanges();
+        }
+
+        public void CancelStatus(int id)
+        {
+            using ApiContext context = new ApiContext();
+            var values = context.Bookings.Where(x=>x.BookingID==id).FirstOrDefault();
+            values.Status = false;
+            context.SaveChanges();
+        }
     }
 }
