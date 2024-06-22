@@ -1,0 +1,34 @@
+﻿@model CreateGuestDto
+@{
+    ViewData["Title"] = "AddGuest";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Misafir Ekleme</h1>
+
+<form method="post">
+    <label>Misafir Adı</label>
+    <input type="text" class="form-control input-rounded" asp-for="Name">
+    <span asp-validation-for="Name" class="tex text-danger"></span>
+    <br />
+    <label>Misafir Soyadı</label>
+    <input type="text" class="form-control input-rounded" asp-for="Surname">
+    <span asp-validation-for="Surname" class="text-danger"></span>
+    <br />
+    <label>Misafir Şehir</label>
+    <select class="form-control input-rounded" asp-for="City">
+        <option value="Adana">Adana</option>
+        <option value="Adıyaman">Adıyaman</option>
+        <option value="Afyonkarahisar">AfyonKarahisar</option>
+        <option value="Gaziantep">Gaziantep</option>
+        <option value="İzmir">İzmir</option>
+        <option value="İstanbul">İstanbul</option>
+        <option value="Ankara">Ankara</option>
+        <option value="Bursa">Bursa</option>
+        <option value="Bolı">Bolu</option>
+    </select>
+    <br />
+ 
+    <button type="submit" class="btn btn-outline-success btn-rounded">Misafir Ekle</button>
+    <a href="/Guest/Index" class="btn btn-outline-secondary btn-rounded">Vazgeç</a>
+</form>

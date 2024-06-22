@@ -31,6 +31,16 @@ builder.Services.AddScoped<IBookingService,BookingMenager>();
 builder.Services.AddScoped<ISubscribeDal,EfSubscribeDal>();
 builder.Services.AddScoped<ISubscribeService,SubscribeMenager>();
 
+builder.Services.AddScoped<IContactDal,EfContactDal>();
+builder.Services.AddScoped<IContactService,ContactMenager>();
+
+builder.Services.AddScoped<IGuestDal,EfGuestDal>();
+builder.Services.AddScoped<IGuestService, GuestMenager>();
+
+builder.Services.AddScoped<ISendMessageDal,EfSendMessageDal>();
+builder.Services.AddScoped<ISendMessageService,SendMessageMenager>();
+
+
 builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
 builder.Services.AddCors(opt =>

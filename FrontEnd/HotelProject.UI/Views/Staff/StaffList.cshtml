@@ -4,53 +4,47 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="en">
+
 
 <body>
-   
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align:center">Personeller Tablosu</h4>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" style="text-align:center">Personeller Tablosu</h4>
                         <a href="/Staff/AddStaff/" class="btn btn-outline-primary btn-rounded" style="margin-bottom:5px;">Yeni Personel Ekle</a>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered zero-configuration">
-                                    <thead>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Personel Adı</th>
+                                        <th>Personel Ünvan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
                                         <tr>
-                                            <th>#</th>
-                                            <th>Personel Adı</th>
-                                            <th>Personel Ünvan</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach(var item in Model)
-                                        {
-                                              <tr>
                                             <th>@item.StaffID</th>
                                             <td>@item.Name</td>
                                             <td>@item.Title</td>
                                             <td><a href="#" class="btn btn-outline-info btn-rounded">Detaylar</a></td>
                                             <td><a href="/Staff/UpdateStaff/@item.StaffID" class="btn btn-outline-dark btn-rounded">Güncelle</a></td>
                                             <td><a href="/Staff/DeleteStaff/@item.StaffID" class="btn btn-outline-danger btn-rounded">Sil</a></td>
-                                       
-                                        </tr>
-                                        }
 
-                                    
-                                      
-                                    </tbody>
-                                </table>
-                                
-                            </div>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
 </body>
-</html>

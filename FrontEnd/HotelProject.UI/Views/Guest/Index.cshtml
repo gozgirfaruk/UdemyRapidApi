@@ -1,0 +1,48 @@
+﻿@model List<ResultGuestDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" style="text-align:center">Misafir Listesi</h4>
+                        <a href="/Guest/AddGuest/" class="btn btn-outline-primary btn-rounded" style="margin-bottom:5px;">Yeni Misafir Ekle</a>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Misafir Adı</th>
+                                        <th>Misafir Soyadı</th>
+                                        <th>Misafir Şehir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th>@item.GuestID</th>
+                                            <td>@item.Name</td>
+                                            <td>@item.Surname</td>
+                                            <td>@item.City</td>
+                                            <td><a href="/Guest/DeleteGuest/@item.GuestID" class="btn btn-outline-danger btn-rounded">Sil</a></td>
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

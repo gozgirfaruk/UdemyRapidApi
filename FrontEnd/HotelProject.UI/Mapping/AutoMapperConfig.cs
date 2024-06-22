@@ -3,7 +3,10 @@ using HotelProject.EntityLayer.Concrete;
 using HotelProject.UI.Dtos.AboutDto;
 using HotelProject.UI.Dtos.AppUser;
 using HotelProject.UI.Dtos.BookingDtos;
+using HotelProject.UI.Dtos.ContactDtos;
+using HotelProject.UI.Dtos.GuestDtos;
 using HotelProject.UI.Dtos.NewsLetterDto;
+using HotelProject.UI.Dtos.RoomDto;
 using HotelProject.UI.Dtos.ServiceDto;
 using HotelProject.UI.Dtos.TestimonialDto;
 using System.Runtime.CompilerServices;
@@ -31,6 +34,19 @@ namespace HotelProject.UI.Mapping
             CreateMap<CreateBookingDto ,Booking>().ReverseMap();
             CreateMap<ResultBookingDto ,Booking>().ReverseMap();
             CreateMap<ApproveStatusDto , Booking>().ReverseMap();
+
+            CreateMap<CreateContactDto , Contact>().ReverseMap();
+            CreateMap<InboxContactDto, Contact>().ReverseMap();
+            CreateMap<SendmessageDto , SendMessage>().ReverseMap();
+
+            CreateMap<ResultRoomDto, Room>().ReverseMap();  
+            CreateMap<UpdateRoomDto , Room>().ReverseMap();
+            CreateMap<CreateRoomDto , Room>().ReverseMap();
+
+            CreateMap<CreateGuestDto, Guest>().ReverseMap();    
+            CreateMap<ResultGuestDto, Guest>().ReverseMap();    
+            CreateMap<UpdateGuestDto, Guest>().ReverseMap();    
+            
         }
     }
 }
