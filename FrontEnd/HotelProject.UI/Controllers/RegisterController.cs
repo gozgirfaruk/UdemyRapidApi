@@ -1,10 +1,12 @@
 ﻿using HotelProject.EntityLayer.Concrete;
 using HotelProject.UI.Dtos.AppUser;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelProject.UI.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

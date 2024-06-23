@@ -2,12 +2,14 @@
 using HotelProject.UI.Dtos.ContactDtos;
 using HotelProject.UI.Dtos.ServiceDto;
 using HotelProject.UI.Models.Staff;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
 namespace HotelProject.UI.Controllers
 {
+    [AllowAnonymous]
     public class AdminContractController : Controller
     {
         private readonly IMapper _mapper;
@@ -22,12 +24,19 @@ namespace HotelProject.UI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("http://localhost:5204/api/Contact");
-            if (responseMessage.IsSuccessStatusCode)
+            var client2 = _httpClientFactory.CreateClient();
+            var responseMessage2 = await client2.GetAsync("http://localhost:5204/api/Contact/GetContact");
+            if (responseMessage.IsSuccessStatusCode & responseMessage2.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<InboxContactDto>>(jsonData);
+                var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
+                ViewBag.a = jsonData2;
+
                 return View(values);
             }
+           
+           
             return View();
         }
 
@@ -35,10 +44,18 @@ namespace HotelProject.UI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("http://localhost:5204/api/SendMessage");
-            if (responseMessage.IsSuccessStatusCode)
+
+            var client2 = _httpClientFactory.CreateClient();
+            var responseMessage2 = await client2.GetAsync("http://localhost:5204/api/SendMessage/GetSendCount");
+
+
+            if (responseMessage.IsSuccessStatusCode & responseMessage2.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultSendboxDto>>(jsonData);
+
+                var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
+                ViewBag.b= jsonData2;
                 return View(values);
             }
             return View();

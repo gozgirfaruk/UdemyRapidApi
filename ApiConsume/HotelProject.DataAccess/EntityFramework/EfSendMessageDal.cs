@@ -15,5 +15,12 @@ namespace HotelProject.DataAccess.EntityFramework
         public EfSendMessageDal(ApiContext context) : base(context)
         {
         }
+
+        public int GetSendCount()
+        {
+            var context = new ApiContext();
+            var value = context.SendMessages.Count();
+            return value;
+        }
     }
 }

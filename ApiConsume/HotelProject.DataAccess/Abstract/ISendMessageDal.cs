@@ -9,5 +9,6 @@ namespace HotelProject.DataAccess.Abstract
 {
     public interface ISendMessageDal : IGenericDal<SendMessage>
     {
+        public int GetSendCount();
     }
 }

@@ -9,5 +9,6 @@ namespace HotelProject.DataAccess.Abstract
 {
     public interface IContactDal : IGenericDal<Contact>
     {
+        public int GetContactCount();
     }
 }

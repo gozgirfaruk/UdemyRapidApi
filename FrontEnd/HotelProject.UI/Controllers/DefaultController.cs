@@ -1,5 +1,6 @@
 ﻿using HotelProject.Business.Abstract;
 using HotelProject.UI.Dtos.NewsLetterDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
@@ -7,6 +8,7 @@ using System.Text;
 
 namespace HotelProject.UI.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

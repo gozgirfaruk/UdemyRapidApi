@@ -9,6 +9,8 @@ using HotelProject.EntityLayer.Concrete;
 using HotelProject.UI.Dtos.GuestDtos;
 using HotelProject.UI.Mapping;
 using HotelProject.UI.ValidationRules.GuestValidator;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +27,22 @@ builder.Services.AddControllersWithViews().AddFluentValidation();
 builder.Services.AddScoped<IBookingDal, EfBookingDal>();
 builder.Services.AddScoped<IBookingService,BookingMenager>();
 
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
+
+builder.Services.AddMvc();
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+    options.AccessDeniedPath = "/ErrorPage/Index/";
+    options.LoginPath = "/Login/Index/";
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,7 +57,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
