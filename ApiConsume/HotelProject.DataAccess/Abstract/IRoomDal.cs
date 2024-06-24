@@ -9,5 +9,6 @@ namespace HotelProject.DataAccess.Abstract
 {
     public interface IRoomDal : IGenericDal<Room>
     {
+        public int RoomCount();
     }
 }

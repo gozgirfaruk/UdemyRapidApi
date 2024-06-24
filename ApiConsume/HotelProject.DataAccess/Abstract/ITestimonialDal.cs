@@ -9,5 +9,6 @@ namespace HotelProject.DataAccess.Abstract
 {
     public interface ITestimonialDal : IGenericDal<Testimonial>
     {
+        public int TestCount();
     }
 }

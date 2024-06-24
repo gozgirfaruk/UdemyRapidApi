@@ -15,5 +15,12 @@ namespace HotelProject.DataAccess.EntityFramework
         public EfTestimonialDal(ApiContext context) : base(context)
         {
         }
+
+        public int TestCount()
+        {
+            var context = new ApiContext();
+            var values = context.Testimonials.Count();
+            return values;
+        }
     }
 }

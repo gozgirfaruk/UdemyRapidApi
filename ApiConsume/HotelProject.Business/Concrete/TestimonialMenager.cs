@@ -38,6 +38,11 @@ namespace HotelProject.Business.Concrete
             _testimonialDal.Insert(entity);
         }
 
+        public int TTestCount()
+        {
+            return _testimonialDal.TestCount();
+        }
+
         public void TUpdate(Testimonial entity)
         {
             _testimonialDal.Update(entity);

@@ -1,0 +1,56 @@
+﻿@model List<HotelProject.UI.Dtos.DashboardDtos.LastReservationDto>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="active-member">
+                    <div class="table-responsive">
+                        <table class="table table-xs mb-0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Görsel</th>
+                                    <th>Misafir</th>
+                                    <th>Giriş Tarihi</th>
+                                    <th>Çıkış Tarihi</th>
+                                    <th>Rezervasyon</th>
+                                    <th>İncele</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.BookingID</th>
+                                    <td><img src="@item.SpecialRequest" class=" rounded-circle mr-3" alt="" style="height:50px;width:50px;"></td>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        <span>@item.CheckIn.ToString("dd.MMMM.yyyy")</span>
+                                    </td>
+                                        <td>
+                                            <span>@item.CheckOut.ToString("dd.MMMM.yyyy")</span>
+                                        </td>
+                                        @if (item.Status == true)
+                                        {
+                                            <td><i class="fa fa-circle-o text-success  mr-2"></i> Onaylandı</td>
+                                        }
+                                        else
+                                        {
+                                            <td><i class="fa fa-circle-o text-warning  mr-2"></i> Beklemede</td>
+                                        }
+
+                                        <td><a href="/BookingAdmin/Index/" class="alert alert-secondary">İncele</a></td>
+
+                                </tr>
+                                }
+                                
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

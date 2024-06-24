@@ -4,6 +4,7 @@ using HotelProject.UI.Dtos.AboutDto;
 using HotelProject.UI.Dtos.AppUser;
 using HotelProject.UI.Dtos.BookingDtos;
 using HotelProject.UI.Dtos.ContactDtos;
+using HotelProject.UI.Dtos.DashboardDtos;
 using HotelProject.UI.Dtos.GuestDtos;
 using HotelProject.UI.Dtos.NewsLetterDto;
 using HotelProject.UI.Dtos.RoomDto;
@@ -52,6 +53,8 @@ namespace HotelProject.UI.Mapping
             CreateMap<ResultWorklocationDto , WorkLocation>().ReverseMap();
             CreateMap<UpdateLocationDto, WorkLocation>().ReverseMap();
             CreateMap<CreateWorklocationDto , WorkLocation>().ReverseMap();
+
+            CreateMap<LastStaffDto , Staff>().ReverseMap();
 
            
             

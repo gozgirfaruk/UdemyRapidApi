@@ -31,5 +31,12 @@ namespace HotelProject.DataAccess.EntityFramework
             values.Status = false;
             context.SaveChanges();
         }
+
+        public List<Booking> LastReservation()
+        {
+            using ApiContext context = new ApiContext();
+            var values = context.Bookings.Take(6).ToList();
+            return values;
+        }
     }
 }

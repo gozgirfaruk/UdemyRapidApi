@@ -38,6 +38,16 @@ namespace HotelProject.Business.Concrete
             _staffDal.Insert(entity);
         }
 
+        public List<Staff> TLastFourStaff()
+        {
+            return _staffDal.LastFourStaff();
+        }
+
+        public int TStaffCount()
+        {
+            return _staffDal.StaffCount();
+        }
+
         public void TUpdate(Staff entity)
         {
             _staffDal.Update(entity);

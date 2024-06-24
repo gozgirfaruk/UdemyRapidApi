@@ -9,5 +9,7 @@ namespace HotelProject.Business.Abstract
 {
     public interface IStaffService : IGenericService<Staff>
     {
+        public int TStaffCount();
+        public List<Staff> TLastFourStaff();
     }
 }

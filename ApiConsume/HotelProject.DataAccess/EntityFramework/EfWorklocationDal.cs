@@ -15,5 +15,12 @@ namespace HotelProject.DataAccess.EntityFramework
         public EfWorklocationDal(ApiContext context) : base(context)
         {
         }
+
+        public int LocationCount()
+        {
+            var context = new ApiContext();
+            var values = context.WorkLocations.Count();
+            return values;
+        }
     }
 }

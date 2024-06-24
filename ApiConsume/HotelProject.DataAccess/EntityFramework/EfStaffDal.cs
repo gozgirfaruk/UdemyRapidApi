@@ -15,5 +15,19 @@ namespace HotelProject.DataAccess.EntityFramework
         public EfStaffDal(ApiContext context) : base(context)
         {
         }
+
+        public List<Staff> LastFourStaff()
+        {
+            var context = new ApiContext();
+            var values = context.Staffies.Take(4).ToList();
+            return values;  
+        }
+
+        public int StaffCount()
+        {
+            var context = new ApiContext();
+            var values = context.Staffies.Count();
+            return values;
+        }
     }
 }

@@ -11,5 +11,7 @@ namespace HotelProject.DataAccess.Abstract
     {
         void ApproveStatus(int id);
         void CancelStatus(int id);
+
+        List<Booking> LastReservation();
     }
 }

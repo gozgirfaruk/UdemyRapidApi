@@ -48,6 +48,11 @@ namespace HotelProject.Business.Concrete
             _bookingDal.Insert(entity);
         }
 
+        public List<Booking> TLastReservation()
+        {
+            return _bookingDal.LastReservation();
+        }
+
         public void TUpdate(Booking entity)
         {
             _bookingDal.Update(entity);

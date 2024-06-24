@@ -38,6 +38,11 @@ namespace HotelProject.Business.Concrete
             _locationDal.Insert(entity);    
         }
 
+        public int TLocationCount()
+        {
+            return _locationDal.LocationCount();
+        }
+
         public void TUpdate(WorkLocation entity)
         {
             _locationDal.Update(entity);

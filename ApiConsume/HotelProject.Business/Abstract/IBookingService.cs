@@ -11,5 +11,6 @@ namespace HotelProject.Business.Abstract
     {
         void TApproveStatus(int id);
         void TCancelStatus(int id);
+        List<Booking> TLastReservation();
     }
 }

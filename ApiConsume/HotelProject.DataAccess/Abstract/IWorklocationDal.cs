@@ -9,5 +9,6 @@ namespace HotelProject.DataAccess.Abstract
 {
     public interface IWorklocationDal : IGenericDal<WorkLocation>
     {
+        public int LocationCount();
     }
 }
