@@ -12,5 +12,9 @@ namespace HotelProject.EntityLayer.Concrete
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? City { get; set; }
+        public string ImageUrl { get; set; }
+        public string Department { get; set; }
+        public int WorkLocationID { get; set; }
+        public WorkLocation WorkLocation { get; set; }
     }
 }

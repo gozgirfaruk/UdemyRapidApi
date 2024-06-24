@@ -1,0 +1,50 @@
+﻿@model List<ResultWorklocationDto>
+
+@{
+    ViewData["Title"] = "LocationList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" style="text-align:center">Lokasyon Tablosu</h4>
+                        <a href="/Staff/AddStaff/" class="btn btn-outline-primary btn-rounded" style="margin-bottom:5px;">Yeni Lokasyon Ekle</a>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Şube Adı</th>
+                                        <th>Bölge</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th>@item.WorkLocationID</th>
+                                            <td>@item.Name</td>
+                                            <td>@item.City</td>
+                                            <td><a href="/Worklocation/UpdateLocation/@item.WorkLocationID" class="btn btn-outline-dark btn-rounded">Güncelle</a></td>
+                                            <td><a href="/Worklocation/DeleteLocation/@item.WorkLocationID" class="btn btn-outline-danger btn-rounded">Sil</a></td>
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+

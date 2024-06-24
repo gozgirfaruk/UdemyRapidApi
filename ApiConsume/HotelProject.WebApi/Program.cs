@@ -4,6 +4,7 @@ using HotelProject.DataAccess.Abstract;
 using HotelProject.DataAccess.Concrete;
 using HotelProject.DataAccess.EntityFramework;
 using HotelProject.WebApi.Mapping;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,12 @@ builder.Services.AddScoped<IGuestService, GuestMenager>();
 builder.Services.AddScoped<ISendMessageDal,EfSendMessageDal>();
 builder.Services.AddScoped<ISendMessageService,SendMessageMenager>();
 
+builder.Services.AddScoped<IWorklocationDal,EfWorklocationDal>();
+builder.Services.AddScoped<IWorklocationService,WorklocationMenager>();
+
+builder.Services.AddScoped<IAppUserDal,EfAppUserDal>();
+builder.Services.AddScoped<IAppUserService,AppUserMenager>();
+
 
 builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
@@ -51,6 +58,7 @@ builder.Services.AddCors(opt =>
     });
 });
 
+builder.Services.AddControllersWithViews().AddJsonOptions(options=>options.JsonSerializerOptions.ReferenceHandler=ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

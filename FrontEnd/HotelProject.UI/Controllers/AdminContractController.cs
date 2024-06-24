@@ -9,7 +9,6 @@ using System.Text;
 
 namespace HotelProject.UI.Controllers
 {
-    [AllowAnonymous]
     public class AdminContractController : Controller
     {
         private readonly IMapper _mapper;

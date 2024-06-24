@@ -28,7 +28,10 @@ namespace HotelProject.UI.Controllers
             {
                 FirstName = model.Name,
                 LastName = model.Surname,
-                UserName = model.UserName
+                UserName = model.UserName,
+                ImageUrl="null",
+                Department="null",
+                WorkLocationID=1
             };
             if (model.Password == model.ConfirmPassword)
             {

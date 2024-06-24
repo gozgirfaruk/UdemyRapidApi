@@ -4,6 +4,7 @@ using HotelProject.DataAccess.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelProject.DataAccess.Migrations
 {
     [DbContext(typeof(ApiContext))]
-    partial class ApiContextModelSnapshot : ModelSnapshot
+    [Migration("20240624060739_mig_imageForUser")]
+    partial class mig_imageForUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,10 +102,6 @@ namespace HotelProject.DataAccess.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Department")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -156,9 +154,6 @@ namespace HotelProject.DataAccess.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<int>("WorkLocationID")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -168,8 +163,6 @@ namespace HotelProject.DataAccess.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("WorkLocationID");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -458,27 +451,6 @@ namespace HotelProject.DataAccess.Migrations
                     b.ToTable("Testimonials");
                 });
 
-            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.WorkLocation", b =>
-                {
-                    b.Property<int>("WorkLocationID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WorkLocationID"), 1L, 1);
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("WorkLocationID");
-
-                    b.ToTable("WorkLocations");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.Property<int>("Id")
@@ -582,17 +554,6 @@ namespace HotelProject.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.AppUser", b =>
-                {
-                    b.HasOne("HotelProject.EntityLayer.Concrete.WorkLocation", "WorkLocation")
-                        .WithMany("AppUsers")
-                        .HasForeignKey("WorkLocationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("WorkLocation");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("HotelProject.EntityLayer.Concrete.AppRole", null)
@@ -642,11 +603,6 @@ namespace HotelProject.DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("HotelProject.EntityLayer.Concrete.WorkLocation", b =>
-                {
-                    b.Navigation("AppUsers");
                 });
 #pragma warning restore 612, 618
         }
