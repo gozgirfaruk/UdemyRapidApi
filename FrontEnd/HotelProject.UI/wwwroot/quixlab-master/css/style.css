@@ -7106,6 +7106,10 @@ a.text-dark:hover, a.text-dark:focus {
   background: #3b5998;
   fill: #3b5998; }
 
+.bg-instagram {
+    background: #c42c91;
+    fill: #c42c91;
+}
 .bg-twitter {
   background: #1da1f2;
   fill: #1da1f2; }
@@ -7123,8 +7127,9 @@ a.text-dark:hover, a.text-dark:focus {
   fill: #db4439; }
 
 .bg-linkedin {
-  background: #007bb6;
-  fill: #007bb6; }
+    background: #080808;
+    fill: #080808;
+}
 
 .color-facebook {
   color: #3b5998; }
@@ -11196,13 +11201,15 @@ table.dataTable thead .sorting::after {
     border-color: #8c0615; }
 
 .btn-linkedin {
-  background: #007bb6;
-  border-color: #007bb6;
-  color: #fff; }
-  .btn-linkedin:active, .btn-linkedin:focus, .btn-linkedin:hover {
-    background: #005983;
+    background: #080808;
+    border-color: #080808;
     color: #fff;
-    border-color: #005983; }
+}
+    .btn-linkedin:active, .btn-linkedin:focus, .btn-linkedin:hover {
+        background: #080808;
+        color: #fff;
+        border-color: #080808;
+    }
 
 .btn-google-plus {
   background: #db4439;
@@ -11667,10 +11674,14 @@ table.dataTable thead .sorting::after {
     background-color: #3b5998; }
   .social-graph-wrapper.widget-twitter {
     background-color: #1da1f2; }
-  .social-graph-wrapper.widget-linkedin {
-    background-color: #007bb6; }
+    .social-graph-wrapper.widget-linkedin {
+        background-color: #080808;
+    }
   .social-graph-wrapper.widget-googleplus {
     background-color: #db4439; }
+    .social-graph-wrapper.widget-instagram {
+        background-color: #c42c91;
+    }
   .social-graph-wrapper .s-icon {
     font-size: 2.1875rem;
     position: relative;

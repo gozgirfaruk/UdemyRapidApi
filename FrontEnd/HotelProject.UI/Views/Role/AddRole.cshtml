@@ -1,0 +1,16 @@
+﻿@model HotelProject.UI.Models.Role.AddRoleModelView
+@{
+    ViewData["Title"] = "AddRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Role Ekleme</h1>
+
+<form method="post">
+    <label>Rol Adı</label>
+    <input type="text" class="form-control input-rounded" asp-for="RoleName">
+    <br />
+
+    <button class="btn btn-outline-success btn-rounded">Rol Ekle</button>
+    <a href="/Role/Index" class="btn btn-outline-secondary btn-rounded">Vazgeç</a>
+</form>
