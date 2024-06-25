@@ -1,4 +1,37 @@
-# 🖼️ Projeye Ait Görseller
+# Hotelier - Api
+
+* ℹ️ Hotelier, otel rezervasyon ve yönetim süreçlerini kolaylaştırmak amacıyla ASP.NET Core kullanılarak geliştirilmiş bir web API projesidir. Proje, kullanıcıların otel odalarını kolayca rezerve edebilecekleri ve yöneticilerin otel yönetim işlemlerini efektif bir şekilde gerçekleştirebilecekleri iki farklı panel sunar.
+
+### Admin Paneli
+  Admin paneli, otel yöneticileri ve personeli için tasarlanmıştır ve aşağıdaki özellikleri içerir:
+
+* Oda ekleme, güncelleme ve silme
+* Rezervasyonları yönetme
+* Kullanıcı hesaplarını yönetme
+* Anlık kullanıcılara mail atabilme
+* Gelen mesajları görüntüleme, yanıtlama
+* Sisteme kayıtlı misafirleri yönetme
+* Profil bilgilerini yönetme
+* Kayıtlı kullanıcı rol yönetimi
+
+### Vitrin Paneli
+Vitrin Paneli, kullanıcıların otelin sunduğu hizmetler ve odalar hakkında bilgi alabilecekleri, otel deneyimlerini keşfedebilecekleri bir arayüz sunar. Bu panel, otel tanıtımı ve müşteri çekmek için kullanılır.
+
+## 💻 Proje Bileşenleri
+
+  * Asp.Net Core
+  * Asp.Net Core Api
+  * Rapid Api
+  * MsSql
+  * N-tier Architecture
+  * Identity
+  * Postman
+  * Swagger
+  * Json Web Token
+  * Fluent Validation
+
+
+## 🖼️ Projeye Ait Görseller
 
 * Ziyaretçi Paneli
 
@@ -56,13 +89,3 @@
 * Veritabanı Diyagramı
 
 ![Screenshot_5](https://github.com/gozgirfaruk/UdemyRapidApi/assets/125920944/e56d1c81-fdf2-4516-8411-afd1b7c5e076)
-
-
-
-
-
-
-
-
-
-
