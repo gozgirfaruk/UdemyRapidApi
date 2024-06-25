@@ -24,6 +24,7 @@ Vitrin Paneli, kullanıcıların otelin sunduğu hizmetler ve odalar hakkında b
   * Rapid Api
   * MsSql
   * N-tier Architecture
+  * Repository Design Pattern
   * Identity
   * Postman
   * Swagger
